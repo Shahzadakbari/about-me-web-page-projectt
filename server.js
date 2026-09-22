@@ -24,8 +24,8 @@ app.use((req, res, next) => {
 // Serve static production assets from dist
 app.use(express.static(path.resolve(__dirname, 'dist')));
 
-// Fallback to index.html for client-side navigation
-app.get('*', (req, res) => {
+// Fallback to index.html for client-side navigation (Express 5 wildcard syntax)
+app.get('*all', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'dist/index.html'));
 });
 
