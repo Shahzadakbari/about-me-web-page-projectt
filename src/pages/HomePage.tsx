@@ -6,11 +6,8 @@ import {
   BookOpen,
   Send,
   CheckCircle,
-  ExternalLink,
   ArrowRight,
   Sparkles,
-  GitBranch,
-  Terminal,
   Mail,
   Award,
   Code2,
@@ -288,102 +285,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 3. My Links Grid Section */}
-      <section id="my-links-section" className="space-y-4">
-        <div className="flex items-center justify-between">
-          <h2 className="text-xl font-bold text-slate-950">My Links</h2>
-          <a
-            href="https://github.com/Shahzadakbari/about-me-web-page-projectt"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1"
-          >
-            View more →
-          </a>
-        </div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          
-          {/* Link 1: GitHub */}
-          <a
-            href="https://github.com/Shahzadakbari/about-me-web-page-projectt"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-5 bg-white rounded-2xl border border-slate-100 shadow-xs hover:shadow-md hover:border-slate-200 transition-all flex flex-col justify-between space-y-4 group"
-          >
-            <div className="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold text-sm shadow-xs group-hover:scale-105 transition-transform">
-              <GitBranch className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-sm font-bold text-slate-900 group-hover:text-amber-600 transition-colors flex items-center gap-1">
-                GitHub <ExternalLink className="w-3 h-3 text-slate-400" />
-              </div>
-              <div className="text-xs text-slate-400 truncate mt-0.5">
-                github.com/Shahzadakbari
-              </div>
-            </div>
-          </a>
-
-          {/* Link 2: Replit */}
-          <a
-            href="https://replit.com/@Shahzad1221"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-5 bg-white rounded-2xl border border-slate-100 shadow-xs hover:shadow-md hover:border-slate-200 transition-all flex flex-col justify-between space-y-4 group"
-          >
-            <div className="w-10 h-10 rounded-xl bg-orange-600 text-white flex items-center justify-center font-bold text-sm shadow-xs group-hover:scale-105 transition-transform">
-              <Terminal className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-sm font-bold text-slate-900 group-hover:text-amber-600 transition-colors flex items-center gap-1">
-                Replit <ExternalLink className="w-3 h-3 text-slate-400" />
-              </div>
-              <div className="text-xs text-slate-400 truncate mt-0.5">
-                replit.com/@Shahzad1221
-              </div>
-            </div>
-          </a>
-
-          {/* Link 3: Email */}
-          <a
-            href="mailto:ahmad1212132011@gmail.com"
-            className="p-5 bg-white rounded-2xl border border-slate-100 shadow-xs hover:shadow-md hover:border-slate-200 transition-all flex flex-col justify-between space-y-4 group"
-          >
-            <div className="w-10 h-10 rounded-xl bg-sky-500 text-white flex items-center justify-center font-bold text-sm shadow-xs group-hover:scale-105 transition-transform">
-              <Mail className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-sm font-bold text-slate-900 group-hover:text-amber-600 transition-colors flex items-center gap-1">
-                Email me <ExternalLink className="w-3 h-3 text-slate-400" />
-              </div>
-              <div className="text-xs text-slate-400 truncate mt-0.5">
-                ahmad1212132011@gmail.com
-              </div>
-            </div>
-          </a>
-
-          {/* Link 4: Portfolio */}
-          <button
-            onClick={() => onNavigate('media')}
-            className="p-5 bg-white rounded-2xl border border-slate-100 shadow-xs hover:shadow-md hover:border-slate-200 transition-all flex flex-col justify-between space-y-4 text-left group cursor-pointer"
-          >
-            <div className="w-10 h-10 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center font-bold text-sm shadow-xs group-hover:scale-105 transition-transform">
-              <Sparkles className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-sm font-bold text-slate-900 group-hover:text-amber-600 transition-colors flex items-center gap-1">
-                Media Gallery <ArrowRight className="w-3 h-3 text-slate-400" />
-              </div>
-              <div className="text-xs text-slate-400 truncate mt-0.5">
-                Browse photos & video
-              </div>
-            </div>
-          </button>
-
-        </div>
-      </section>
-
-      {/* 4. Detailed Biography Section */}
+      {/* 3. Detailed Biography Section */}
       <section id="bio-details-section" className="bg-slate-50/80 rounded-3xl p-6 sm:p-8 border border-slate-200/80 space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2.5">
