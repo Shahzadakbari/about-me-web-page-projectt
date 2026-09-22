@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PageId, Message } from './types';
-import { Navbar } from './components/Navbar';
-import { Footer } from './components/Footer';
+import { Sidebar } from './components/Sidebar';
 import { HomePage } from './pages/HomePage';
 import { MediaPage } from './pages/MediaPage';
 import { FuturePage } from './pages/FuturePage';
@@ -28,7 +27,6 @@ export default function App() {
         const data = await res.json();
         setMessages(data);
       } else {
-        // Fallback to local storage if API is inaccessible
         loadLocalFallbackMessages();
       }
     } catch {
@@ -150,7 +148,7 @@ export default function App() {
     localStorage.removeItem('ahmad_admin_auth');
   };
 
-  // Test simulation: create a new random inquiry to test persistence & chart updating
+  // Test simulation: create a new random inquiry to test persistence
   const handleCreateTestMessage = async () => {
     const sampleNames = ['Jordan Smith', 'Coach Williams', 'Emma Vance', 'Prof. Thorne'];
     const sampleCats = ['Feedback', 'Question', 'Collaboration', 'Education'];
@@ -162,45 +160,83 @@ export default function App() {
       email: `${randomName.toLowerCase().replace(' ', '.')}@example.com`,
       subject: `Inquiry regarding ${randomCat.toLowerCase()}`,
       category: randomCat,
-      message: `Hello Ahmad! This is an automated test inquiry submitted to verify JSON storage persistence and live chart updating. Keep up the great work!`,
+      message: `Hello Ahmad! This is a test inquiry to verify message storage and notifications in your admin panel.`,
     });
   };
 
   const unreadCount = messages.filter((m) => !m.isRead).length;
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 selection:bg-blue-600 selection:text-white">
-      {/* Shared Navigation Header */}
-      <Navbar
-        currentPage={currentPage}
-        onNavigate={setCurrentPage}
-        unreadCount={unreadCount}
-      />
+    <div className="min-h-screen bg-amber-400 p-2 sm:p-5 lg:p-8 flex justify-center items-start selection:bg-amber-400 selection:text-slate-950 font-sans text-slate-800">
+      {/* Sidenote Outer Rounded Container */}
+      <div className="w-full max-w-[1360px] bg-white rounded-3xl shadow-2xl overflow-hidden border border-amber-300/70 flex flex-col md:flex-row min-h-[92vh]">
+        {/* Left Categorized Sidebar */}
+        <Sidebar
+          currentPage={currentPage}
+          onNavigate={setCurrentPage}
+          unreadCount={unreadCount}
+        />
 
-      {/* Main Page Body Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        {currentPage === 'home' && (
-          <HomePage onNavigate={setCurrentPage} onSendMessage={handleSendMessage} />
-        )}
-        {currentPage === 'media' && <MediaPage />}
-        {currentPage === 'future' && <FuturePage />}
-        {currentPage === 'hobby' && <HobbyPage />}
-        {currentPage === 'sports' && <SportsPage />}
-        {currentPage === 'admin' && (
-          <AdminPage
-            messages={messages}
-            isAuthenticated={isAdminAuthenticated}
-            onLogin={handleAdminLogin}
-            onLogout={handleAdminLogout}
-            onToggleRead={handleToggleRead}
-            onDeleteMessage={handleDeleteMessage}
-            onCreateTestMessage={handleCreateTestMessage}
-          />
-        )}
-      </main>
+        {/* Right Main Content Stage */}
+        <main className="flex-1 p-5 sm:p-8 lg:p-12 overflow-y-auto bg-white min-w-0 flex flex-col justify-between">
+          <div className="flex-1">
+            {currentPage === 'home' && (
+              <HomePage
+                onNavigate={setCurrentPage}
+                onSendMessage={handleSendMessage}
+              />
+            )}
+            {currentPage === 'media' && <MediaPage />}
+            {currentPage === 'future' && <FuturePage />}
+            {currentPage === 'hobby' && <HobbyPage />}
+            {currentPage === 'sports' && <SportsPage />}
+            {currentPage === 'admin' && (
+              <AdminPage
+                messages={messages}
+                isAuthenticated={isAdminAuthenticated}
+                onLogin={handleAdminLogin}
+                onLogout={handleAdminLogout}
+                onToggleRead={handleToggleRead}
+                onDeleteMessage={handleDeleteMessage}
+                onCreateTestMessage={handleCreateTestMessage}
+              />
+            )}
+          </div>
 
-      {/* Shared Footer */}
-      <Footer onNavigate={setCurrentPage} />
+          {/* Minimalist Sidenote Bottom Signature */}
+          <footer className="mt-16 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3">
+            <div>
+              © {new Date().getFullYear()} Ahmad Shahzad Akbari • Personal Portfolio
+            </div>
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => setCurrentPage('home')}
+                className="hover:text-slate-700 transition-colors cursor-pointer"
+              >
+                Home
+              </button>
+              <button
+                onClick={() => setCurrentPage('hobby')}
+                className="hover:text-slate-700 transition-colors cursor-pointer"
+              >
+                Hobbies
+              </button>
+              <button
+                onClick={() => setCurrentPage('sports')}
+                className="hover:text-slate-700 transition-colors cursor-pointer"
+              >
+                Sports
+              </button>
+              <button
+                onClick={() => setCurrentPage('admin')}
+                className="hover:text-slate-700 transition-colors cursor-pointer"
+              >
+                Admin
+              </button>
+            </div>
+          </footer>
+        </main>
+      </div>
     </div>
   );
 }
