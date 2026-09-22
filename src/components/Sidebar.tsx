@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PageId } from '../types';
 import {
   Home,
-  Camera,
+  Gamepad2,
   Trophy,
   Compass,
   Image as ImageIcon,
@@ -69,8 +69,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
           onClick={() => handleSelect('hobby')}
           className={navItemClass(currentPage === 'hobby')}
         >
-          <span>Hobbies & Tech</span>
-          <Camera className="w-4 h-4 text-slate-400" />
+          <span>Hobbies</span>
+          <Gamepad2 className="w-4 h-4 text-slate-400" />
         </button>
 
         <button

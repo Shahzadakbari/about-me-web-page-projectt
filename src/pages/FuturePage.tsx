@@ -71,7 +71,7 @@ export const FuturePage: React.FC = () => {
         <div className="max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-200">
             <Compass className="w-3.5 h-3.5 text-blue-600" />
-            <span>Phase 3 • Future Page</span>
+            <span>Future Aspirations</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-900">

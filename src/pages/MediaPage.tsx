@@ -83,7 +83,7 @@ export const MediaPage: React.FC = () => {
         <div className="max-w-3xl space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-200">
             <Image className="w-3.5 h-3.5 text-blue-600" />
-            <span>Phase 2 • Media Gallery</span>
+            <span>Media Gallery</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-900">
             Media & Project Showcase
@@ -96,7 +96,7 @@ export const MediaPage: React.FC = () => {
           <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 flex items-start gap-2.5 mt-4">
             <AlertCircle className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
             <div>
-              <span className="font-bold text-slate-900">How to replace placeholders:</span> These media items currently use sample reference photos. When you are ready in Phase 2, simply tell me which photos or YouTube video links you want to feature!
+              <span className="font-bold text-slate-900">Media Customization:</span> These media items feature high-resolution student and portfolio reference photos along with an embedded video player.
             </div>
           </div>
         </div>

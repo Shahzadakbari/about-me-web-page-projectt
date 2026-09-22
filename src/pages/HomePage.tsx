@@ -214,10 +214,10 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
               <div>
                 <h3 className="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">
-                  Branding and Web Architecture
+                  Basketball, Soccer & Gaming
                 </h3>
                 <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
-                  Exploring the relationship between modern UI layouts, component architecture, and product design.
+                  Balancing academics and coding with high-energy hobbies: competitive basketball, soccer, and video games.
                 </p>
               </div>
               <div className="text-[11px] text-slate-400 font-medium">

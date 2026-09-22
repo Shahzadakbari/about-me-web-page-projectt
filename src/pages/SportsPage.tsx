@@ -40,7 +40,7 @@ export const SportsPage: React.FC = () => {
         <div className="max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-200">
             <Trophy className="w-3.5 h-3.5 text-blue-600" />
-            <span>Phase 5 • Sports & Athletics</span>
+            <span>Sports & Athletics</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-900">
@@ -54,7 +54,7 @@ export const SportsPage: React.FC = () => {
           <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 flex items-start gap-2.5">
             <AlertCircle className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
             <div>
-              <span className="font-bold text-slate-900">Phase 5 Sports Customization:</span> When we reach Phase 5, you can tell me your exact favorite sport, personal positions, favorite professional athletes, or upload photos from your own games!
+              <span className="font-bold text-slate-900">Sports & Conditioning:</span> Showcasing competitive basketball, soccer, and athletic conditioning routines.
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@ export const SportsPage: React.FC = () => {
             Placeholder for embedding a YouTube match clip or personal scrimmage highlight reel.
           </p>
           <span className="mt-3 text-[10px] font-mono px-2 py-0.5 rounded bg-slate-950/80 text-blue-400 border border-slate-700">
-            [Placeholder: Replace with YouTube/Vimeo embed in Phase 5]
+            [Highlight Reel & Practice Clips]
           </span>
         </div>
       </div>
