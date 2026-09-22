@@ -8,7 +8,7 @@ export const SportsPage: React.FC = () => {
       role: 'Games with Friends • Cristiano Ronaldo Fan',
       description: 'Playing pickup soccer matches with friends at local parks and school fields. Inspired by Cristiano Ronaldo, the best player in the world.',
       stats: 'Teamwork • High Energy • Having Fun with Friends',
-      image: '/src/assets/images/soccer_ronaldo_celebrate_1790100465423.jpg',
+      image: '/src/assets/images/ronaldo_celebration.gif',
       color: 'emerald',
     },
     {
@@ -16,7 +16,7 @@ export const SportsPage: React.FC = () => {
       role: 'Outdoor Court Games & Shooting Hoops',
       description: 'Running casual pickup basketball games with friends, working on jump shots, fast breaks, and friendly competition after school.',
       stats: 'Quick Reflexes • Shooting Hoops • Friendly Competition',
-      image: '/src/assets/images/basketball_court_sunset_1790100453864.jpg',
+      image: '/src/assets/images/basketball_dunk.gif',
       color: 'amber',
     },
     {
@@ -97,21 +97,37 @@ export const SportsPage: React.FC = () => {
       </div>
 
       {/* Ronaldo & Team Highlight Box */}
-      <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 border border-slate-800 space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div>
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-300 text-xs font-semibold mb-2">
-              <Star className="w-3.5 h-3.5 fill-amber-300 text-amber-300" />
-              <span>The GOAT</span>
+      <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 border border-slate-800 space-y-8">
+        <div className="flex flex-col lg:flex-row items-center gap-8">
+          <div className="w-full lg:w-1/3 flex justify-center">
+            <div className="relative w-48 h-56 sm:w-56 sm:h-64 rounded-2xl overflow-hidden border-2 border-amber-400/80 shadow-2xl bg-slate-950 group">
+              <img
+                src="/src/assets/images/ronaldo_celebration.gif"
+                alt="Cristiano Ronaldo Siuu Celebration"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute bottom-2 left-2 right-2 px-2.5 py-1 rounded-lg bg-slate-950/85 backdrop-blur-xs text-center">
+                <span className="text-xs font-bold text-amber-400">CRISTIANO RONALDO #7</span>
+              </div>
             </div>
-            <h2 className="text-xl sm:text-2xl font-bold">Cristiano Ronaldo Spotlight</h2>
-            <p className="text-xs sm:text-sm text-slate-400 mt-1">
-              Why CR7 is my favorite athlete and soccer icon
+          </div>
+
+          <div className="w-full lg:w-2/3 space-y-4">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-300 text-xs font-semibold">
+              <Star className="w-3.5 h-3.5 fill-amber-300 text-amber-300" />
+              <span>The GOAT • CR7</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+              Cristiano Ronaldo Spotlight
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Cristiano Ronaldo is the best soccer player of all time. His relentless work ethic, athletic longevity, and ability to rise in clutch moments inspire how I approach hard work, discipline in school, and playing sports with friends.
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 border-t border-slate-800">
           <div className="p-5 rounded-2xl bg-slate-800/80 border border-slate-700/80 space-y-2">
             <div className="text-sm font-bold text-white">Work Ethic & Dedication</div>
             <p className="text-xs text-slate-400 leading-relaxed">

@@ -44,7 +44,7 @@ export const HobbyPage: React.FC = () => {
       description:
         'Playing basketball with my friends is one of my absolute favorite things to do. We head to the outdoor courts after school and on weekends to run friendly games, practice shooting, and compete with lots of energy and laughs.',
       image:
-        '/src/assets/images/basketball_court_sunset_1790100453864.jpg',
+        '/src/assets/images/basketball_dunk.gif',
       icon: Trophy,
       accentColor: 'border-amber-500/30 text-amber-600',
       badgeBg: 'bg-amber-100',

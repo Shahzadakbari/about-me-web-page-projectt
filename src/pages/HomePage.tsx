@@ -207,13 +207,16 @@ export const HomePage: React.FC<HomePageProps> = ({
             onClick={() => onNavigate('hobby')}
             className="group bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-xs hover:shadow-md transition-all cursor-pointer flex flex-col"
           >
-            <div className="aspect-4/3 w-full bg-slate-100 overflow-hidden">
+            <div className="aspect-4/3 w-full bg-slate-900 overflow-hidden relative">
               <img
-                src="/src/assets/images/basketball_court_sunset_1790100453864.jpg"
+                src="/src/assets/images/basketball_dunk.gif"
                 alt="Basketball with Friends"
-                className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-300"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 referrerPolicy="no-referrer"
               />
+              <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-slate-950/80 text-amber-400 text-[10px] font-bold uppercase tracking-wider backdrop-blur-xs">
+                HOOPS • GIF
+              </div>
             </div>
             <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
               <div>
@@ -235,13 +238,16 @@ export const HomePage: React.FC<HomePageProps> = ({
             onClick={() => onNavigate('sports')}
             className="group bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-xs hover:shadow-md transition-all cursor-pointer flex flex-col"
           >
-            <div className="aspect-4/3 w-full bg-slate-100 overflow-hidden">
+            <div className="aspect-4/3 w-full bg-slate-900 overflow-hidden relative">
               <img
-                src="/src/assets/images/soccer_ronaldo_celebrate_1790100465423.jpg"
-                alt="Soccer with Friends & Ronaldo"
-                className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-300"
+                src="/src/assets/images/ronaldo_celebration.gif"
+                alt="Cristiano Ronaldo Siuu Celebration"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 referrerPolicy="no-referrer"
               />
+              <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-slate-950/80 text-amber-400 text-[10px] font-bold uppercase tracking-wider backdrop-blur-xs">
+                CR7 • GIF
+              </div>
             </div>
             <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
               <div>
