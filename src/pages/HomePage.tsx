@@ -108,7 +108,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSendMessage })
           {/* Right Text & Newsletter */}
           <div className="md:col-span-7 space-y-5">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight">
-              Hey! I'm Ahmad.
+              Hey! I'm Shahzad.
             </h1>
 
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">

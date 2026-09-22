@@ -57,11 +57,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
         className="flex items-center gap-3.5 text-left group focus:outline-hidden"
       >
         <div className="w-10 h-10 rounded-full bg-amber-400 text-slate-950 font-extrabold flex items-center justify-center text-lg shadow-xs group-hover:scale-105 transition-transform">
-          A
+          S
         </div>
         <div>
           <div className="text-base font-bold text-slate-900 group-hover:text-amber-600 transition-colors leading-tight">
-            Ahmad
+            Shahzad
           </div>
           <div className="text-xs text-slate-400 font-medium">Personal Portfolio</div>
         </div>
@@ -247,9 +247,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
           className="flex items-center gap-2.5 focus:outline-hidden"
         >
           <div className="w-8 h-8 rounded-full bg-amber-400 text-slate-950 font-bold flex items-center justify-center text-sm shadow-xs">
-            A
+            S
           </div>
-          <span className="font-bold text-slate-900 text-sm">Ahmad • Portfolio</span>
+          <span className="font-bold text-slate-900 text-sm">Shahzad • Portfolio</span>
         </button>
 
         <button
