@@ -2,25 +2,13 @@ import React, { useState } from 'react';
 import { PageId } from '../types';
 import {
   Home,
-  User,
   Camera,
   Trophy,
   Compass,
   Image as ImageIcon,
-  Radio,
-  Bookmark,
-  FolderGit2,
-  Briefcase,
-  Layers,
-  Terminal,
-  AtSign,
-  Mail,
   ShieldCheck,
   Menu,
-  X,
-  ExternalLink,
-  ChevronRight,
-  GitBranch
+  X
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -50,7 +38,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     }`;
 
   const sidebarContent = (
-    <div className="flex flex-col h-full py-6 px-5 space-y-7">
+    <div className="flex flex-col h-full py-6 px-5 space-y-6">
       {/* Brand Header */}
       <button
         onClick={() => handleSelect('home')}
@@ -67,7 +55,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
       </button>
 
-      {/* Main Pages Navigation */}
+      {/* Navigation Links */}
       <div className="space-y-1">
         <button
           onClick={() => handleSelect('home')}
@@ -76,6 +64,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <span>Home</span>
           <Home className="w-4 h-4 text-slate-400" />
         </button>
+
         <button
           onClick={() => handleSelect('hobby')}
           className={navItemClass(currentPage === 'hobby')}
@@ -83,6 +72,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <span>Hobbies & Tech</span>
           <Camera className="w-4 h-4 text-slate-400" />
         </button>
+
         <button
           onClick={() => handleSelect('sports')}
           className={navItemClass(currentPage === 'sports')}
@@ -90,144 +80,31 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <span>Sports & Athletics</span>
           <Trophy className="w-4 h-4 text-slate-400" />
         </button>
-      </div>
 
-      {/* MY WORLD Navigation Group */}
-      <div className="space-y-2">
-        <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-3">
-          My World
-        </div>
-        <div className="space-y-1">
-          <button
-            onClick={() => {
-              if (currentPage !== 'home') handleSelect('home');
-              setTimeout(() => {
-                document.getElementById('my-links-section')?.scrollIntoView({ behavior: 'smooth' });
-              }, 100);
-            }}
-            className={navItemClass(false)}
-          >
-            <span>My Links</span>
-            <ExternalLink className="w-4 h-4 text-slate-400" />
-          </button>
-          <button
-            onClick={() => handleSelect('future')}
-            className={navItemClass(currentPage === 'future')}
-          >
-            <span>Future Goals</span>
-            <Compass className="w-4 h-4 text-slate-400" />
-          </button>
-          <button
-            onClick={() => handleSelect('media')}
-            className={navItemClass(currentPage === 'media')}
-          >
-            <span>Media Gallery</span>
-            <ImageIcon className="w-4 h-4 text-slate-400" />
-          </button>
-          <button
-            onClick={() => {
-              if (currentPage !== 'home') handleSelect('home');
-              setTimeout(() => {
-                document.getElementById('bio-details-section')?.scrollIntoView({ behavior: 'smooth' });
-              }, 100);
-            }}
-            className={navItemClass(false)}
-          >
-            <span>About Bio</span>
-            <User className="w-4 h-4 text-slate-400" />
-          </button>
-        </div>
-      </div>
+        <button
+          onClick={() => handleSelect('future')}
+          className={navItemClass(currentPage === 'future')}
+        >
+          <span>Future Goals</span>
+          <Compass className="w-4 h-4 text-slate-400" />
+        </button>
 
-      {/* MY WORK Group */}
-      <div className="space-y-2">
-        <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-3">
-          My Work
-        </div>
-        <div className="space-y-1">
-          <button
-            onClick={() => handleSelect('hobby')}
-            className={navItemClass(false)}
-          >
-            <span>Web Projects</span>
-            <FolderGit2 className="w-4 h-4 text-slate-400" />
-          </button>
-          <button
-            onClick={() => handleSelect('sports')}
-            className={navItemClass(false)}
-          >
-            <span>Athletics & Training</span>
-            <Trophy className="w-4 h-4 text-slate-400" />
-          </button>
-          <button
-            onClick={() => handleSelect('media')}
-            className={navItemClass(false)}
-          >
-            <span>Photo Showcase</span>
-            <Layers className="w-4 h-4 text-slate-400" />
-          </button>
-        </div>
-      </div>
+        <button
+          onClick={() => handleSelect('media')}
+          className={navItemClass(currentPage === 'media')}
+        >
+          <span>Media Gallery</span>
+          <ImageIcon className="w-4 h-4 text-slate-400" />
+        </button>
 
-      {/* CONNECT Group */}
-      <div className="space-y-2">
-        <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-3">
-          Connect
-        </div>
-        <div className="space-y-1">
-          <a
-            href="https://github.com/Shahzadakbari/about-me-web-page-projectt"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={navItemClass(false)}
-          >
-            <span>GitHub</span>
-            <GitBranch className="w-4 h-4 text-slate-400" />
-          </a>
-          <a
-            href="https://replit.com/@Shahzad1221"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={navItemClass(false)}
-          >
-            <span>Replit</span>
-            <Terminal className="w-4 h-4 text-slate-400" />
-          </a>
-          <a
-            href="mailto:ahmad1212132011@gmail.com"
-            className={navItemClass(false)}
-          >
-            <span>Email me</span>
-            <AtSign className="w-4 h-4 text-slate-400" />
-          </a>
-          <button
-            onClick={() => {
-              if (currentPage !== 'home') handleSelect('home');
-              setTimeout(() => {
-                document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
-              }, 100);
-            }}
-            className={navItemClass(false)}
-          >
-            <span>Contact form</span>
-            <Mail className="w-4 h-4 text-slate-400" />
-          </button>
-        </div>
-      </div>
-
-      {/* ADMIN Section */}
-      <div className="pt-2 border-t border-slate-100 space-y-2">
-        <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-3">
-          Admin
-        </div>
         <button
           onClick={() => handleSelect('admin')}
           className={navItemClass(currentPage === 'admin')}
         >
           <div className="flex items-center gap-2">
-            <span>Admin Portal</span>
+            <span>Admin Inbox</span>
             {unreadCount > 0 && (
-              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-amber-400 text-slate-950">
+              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-amber-400 text-slate-950 ml-1">
                 {unreadCount}
               </span>
             )}

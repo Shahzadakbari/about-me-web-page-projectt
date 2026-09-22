@@ -28,7 +28,10 @@ interface HomePageProps {
   }) => Promise<boolean>;
 }
 
-export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSendMessage }) => {
+export const HomePage: React.FC<HomePageProps> = ({
+  onNavigate,
+  onSendMessage,
+}) => {
   // Newsletter state
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [newsletterSubscribed, setNewsletterSubscribed] = useState(false);
