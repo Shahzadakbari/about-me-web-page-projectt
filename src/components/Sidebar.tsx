@@ -44,8 +44,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
         onClick={() => handleSelect('home')}
         className="flex items-center gap-3.5 text-left group focus:outline-hidden"
       >
-        <div className="w-10 h-10 rounded-full bg-amber-400 text-slate-950 font-extrabold flex items-center justify-center text-lg shadow-xs group-hover:scale-105 transition-transform">
-          S
+        <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-amber-400 shadow-xs group-hover:scale-105 transition-transform bg-slate-100 shrink-0">
+          <img
+            src="/src/assets/images/user_profile.jpg"
+            alt="Shahzad"
+            className="w-full h-full object-cover object-top"
+            referrerPolicy="no-referrer"
+          />
         </div>
         <div>
           <div className="text-base font-bold text-slate-900 group-hover:text-amber-600 transition-colors leading-tight">
@@ -123,8 +128,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
           onClick={() => handleSelect('home')}
           className="flex items-center gap-2.5 focus:outline-hidden"
         >
-          <div className="w-8 h-8 rounded-full bg-amber-400 text-slate-950 font-bold flex items-center justify-center text-sm shadow-xs">
-            S
+          <div className="w-8 h-8 rounded-full overflow-hidden border border-amber-400 shadow-xs shrink-0">
+            <img
+              src="/src/assets/images/user_profile.jpg"
+              alt="Shahzad"
+              className="w-full h-full object-cover object-top"
+              referrerPolicy="no-referrer"
+            />
           </div>
           <span className="font-bold text-slate-900 text-sm">Shahzad • Portfolio</span>
         </button>

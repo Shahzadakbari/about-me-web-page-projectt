@@ -93,13 +93,13 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="bg-white rounded-3xl border border-slate-100 p-6 sm:p-8 lg:p-10 shadow-xs">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           
-          {/* Portrait Image with Vibrant Studio Backdrop */}
+          {/* Portrait Image with Studio Backdrop */}
           <div className="md:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-[340px] aspect-square rounded-2xl overflow-hidden shadow-md bg-amber-400">
+            <div className="relative w-full max-w-[340px] aspect-3/4 rounded-3xl overflow-hidden shadow-lg border border-slate-200/80 bg-slate-900 group">
               <img
-                src="/src/assets/images/ahmad_profile_portrait_1790039736950.jpg"
+                src="/src/assets/images/user_profile.jpg"
                 alt="Ahmad Shahzad Akbari"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top group-hover:scale-103 transition-transform duration-300"
                 referrerPolicy="no-referrer"
               />
             </div>

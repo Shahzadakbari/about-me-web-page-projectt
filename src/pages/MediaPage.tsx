@@ -9,6 +9,16 @@ export const MediaPage: React.FC = () => {
   // Gallery items with clear placeholder labeling
   const mediaItems: MediaItem[] = [
     {
+      id: 'm0',
+      title: 'Ahmad Shahzad Akbari — Student Portrait',
+      category: 'Portraits',
+      type: 'image',
+      url: '/src/assets/images/user_profile.jpg',
+      caption: 'Official student portrait for high school portfolio and web profile.',
+      date: 'Sept 2026',
+      isPlaceholder: false,
+    },
+    {
       id: 'm1',
       title: 'First Web Project Screenshot',
       category: 'School & Tech',
