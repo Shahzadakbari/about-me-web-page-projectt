@@ -167,9 +167,9 @@ export default function App() {
   const unreadCount = messages.filter((m) => !m.isRead).length;
 
   return (
-    <div className="min-h-screen bg-amber-400 p-2 sm:p-5 lg:p-8 flex justify-center items-start selection:bg-amber-400 selection:text-slate-950 font-sans text-slate-800">
+    <div className="min-h-screen bg-slate-200 p-2 sm:p-5 lg:p-8 flex justify-center items-start selection:bg-slate-900 selection:text-white font-sans text-slate-800">
       {/* Sidenote Outer Rounded Container */}
-      <div className="w-full max-w-[1360px] bg-white rounded-3xl shadow-2xl overflow-hidden border border-amber-300/70 flex flex-col md:flex-row min-h-[92vh]">
+      <div className="w-full max-w-[1360px] bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-300/80 flex flex-col md:flex-row min-h-[92vh]">
         {/* Left Categorized Sidebar */}
         <Sidebar
           currentPage={currentPage}
