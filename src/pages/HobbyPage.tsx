@@ -9,7 +9,8 @@ import {
   Users,
   Target,
   Zap,
-  Play
+  Play,
+  Heart
 } from 'lucide-react';
 
 type HobbyCategory = 'all' | 'basketball' | 'soccer' | 'gaming';
@@ -38,82 +39,82 @@ export const HobbyPage: React.FC = () => {
     {
       id: 'basketball',
       category: 'basketball',
-      title: 'Basketball',
-      subtitle: 'Fast-paced court play, shooting drills, and team chemistry',
+      title: 'Basketball with Friends',
+      subtitle: 'Fast-paced pickup games, shooting hoops, and having fun',
       description:
-        'Basketball is one of my biggest passions. Whether playing pickup games at the local park, running scrimmages, or practicing jump shots and handles solo, being on the court clears my mind and pushes my endurance and competitive drive.',
+        'Playing basketball with my friends is one of my absolute favorite things to do. We head to the outdoor courts after school and on weekends to run friendly games, practice shooting, and compete with lots of energy and laughs.',
       image:
-        'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1000&auto=format&fit=crop&q=80',
+        '/src/assets/images/basketball_court_sunset_1790100453864.jpg',
       icon: Trophy,
       accentColor: 'border-amber-500/30 text-amber-600',
       badgeBg: 'bg-amber-100',
       badgeText: 'text-amber-800',
-      keySkills: ['Perimeter Shooting', 'Court Vision', 'Ball Handling', 'Defensive Agility'],
+      keySkills: ['Court Fun', 'Team Spirit', 'Shooting Hoops', 'Fast Breaks'],
       stats: [
-        { label: 'Primary Role', value: 'Guard / Playmaker' },
-        { label: 'Weekly Sessions', value: '3-4 Times' },
-        { label: 'Favorite Move', value: 'Step-back Jumper' },
+        { label: 'How I Play', value: 'With Friends' },
+        { label: 'Court Type', value: 'Outdoor & Park' },
+        { label: 'Favorite Part', value: 'Scoring with friends' },
       ],
       favoriteAspect:
-        'The quick decision-making under defensive pressure. Just like programming, basketball rewards pattern recognition, rapid spatial awareness, and consistent repetition.',
+        'The friendly competition and camaraderie. Whether it is 3v3 or just shooting around with friends, it is the best way to de-stress and stay active.',
       highlights: [
-        'Dedicated 3-point shooting and free-throw drills',
-        'Weekend community tournament and pickup matches',
-        'Conditioning: footwork ladders and sprint intervals',
+        'Running friendly pickup games with friends',
+        'Practicing free throws and three-point shots',
+        'Staying energized and conditioned outside class',
       ],
     },
     {
       id: 'soccer',
       category: 'soccer',
-      title: 'Soccer',
-      subtitle: 'Tactical team play, ball mastery, and continuous stamina',
+      title: 'Soccer & Following Ronaldo',
+      subtitle: 'Weekend matches with friends & inspired by Cristiano Ronaldo',
       description:
-        'Soccer has been a huge part of my life for years. I love the non-stop flow of the match, the teamwork needed to break down defenses, and the sheer thrill of scoring a clean goal or delivering the perfect through-ball to a teammate.',
+        'Soccer is another sport I love playing with my friends. We set up matches, pass the ball around, and enjoy every minute on the field. Plus, Cristiano Ronaldo is the undisputed GOAT (Greatest of All Time) — watching his dedication, iconic celebrations, and incredible work ethic inspires me every day.',
       image:
-        'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=1000&auto=format&fit=crop&q=80',
+        '/src/assets/images/soccer_ronaldo_celebrate_1790100465423.jpg',
       icon: Activity,
       accentColor: 'border-emerald-500/30 text-emerald-600',
       badgeBg: 'bg-emerald-100',
       badgeText: 'text-emerald-800',
-      keySkills: ['Accurate Passing', 'High Stamina', 'Pitch Awareness', 'First-Touch Control'],
+      keySkills: ['Passing & Moving', 'Team Chemistry', 'Stamina', 'Ronaldo Fan'],
       stats: [
-        { label: 'Position', value: 'Winger / Midfielder' },
-        { label: 'Weekly Sessions', value: '2-3 Matches' },
-        { label: 'Preferred Foot', value: 'Right Foot' },
+        { label: 'Favorite Player', value: 'Cristiano Ronaldo' },
+        { label: 'Play Style', value: 'Games with Friends' },
+        { label: 'GOAT Status', value: 'CR7 #1' },
       ],
       favoriteAspect:
-        'The feeling of team synergy when everyone executes a coordinated counterattack and moves the ball with single-touch precision.',
+        'Celebrating goals with friends and watching Cristiano Ronaldo clutch out big matches with unshakeable confidence.',
       highlights: [
-        '90 minutes of continuous cardiovascular endurance',
-        'Tactical positioning and spacing off the ball',
-        'Following international leagues and world tournaments',
+        'Casual matches with friends at local parks and fields',
+        'Watching Ronaldo highlights and classic championship games',
+        'Practicing ball control and having a blast playing together',
       ],
     },
     {
       id: 'gaming',
       category: 'gaming',
-      title: 'Video Games',
-      subtitle: 'Competitive esports, tactical strategy, and relaxing with friends',
+      title: 'PUBG Mobile & Highway Racer Pro (HRP)',
+      subtitle: 'Intense battle royale squads & high-speed highway racing',
       description:
-        'Gaming is where I unwind, connect with friends online, and challenge my reflexes. From competitive sports simulations like EA FC and NBA 2K to tactical team shooters and open-world adventures, video games combine storytelling with interactive problem solving.',
+        'When it comes to video games, my go-to titles are PUBG Mobile and Highway Racer Pro (HRP). In PUBG Mobile, I jump into squad matches, strategize positioning, and fight for the chicken dinner. In Highway Racer Pro, it is all about adrenaline, dodging traffic, and mastering high-speed car controls.',
       image:
-        'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=1000&auto=format&fit=crop&q=80',
+        'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1000&auto=format&fit=crop&q=80',
       icon: Gamepad2,
       accentColor: 'border-purple-500/30 text-purple-600',
       badgeBg: 'bg-purple-100',
       badgeText: 'text-purple-800',
-      keySkills: ['Rapid Reflexes', 'Strategic Planning', 'Team Voice Comms', 'Mental Focus'],
+      keySkills: ['Quick Reflexes', 'Squad Strategy', 'Highway Precision', 'Focus'],
       stats: [
-        { label: 'Favorite Genres', value: 'Sports & Tactical' },
-        { label: 'Platforms', value: 'PC & Console' },
-        { label: 'Top Games', value: 'EA FC, 2K, Valorant' },
+        { label: 'Main Battle Royale', value: 'PUBG Mobile' },
+        { label: 'Main Racing Game', value: 'Highway Racer Pro (HRP)' },
+        { label: 'Session Type', value: 'Squads & Solo Racing' },
       ],
       favoriteAspect:
-        'Analyzing game mechanics and competing in multiplayer lobbies where communication, timing, and composure lead to clutch victories.',
+        'Clutching up in final circles on PUBG Mobile with friends and pulling off close passes at max speed in Highway Racer Pro.',
       highlights: [
-        'Competitive online squad matches with friends',
-        'Appreciation for game design, physics engines, and graphics',
-        'Streamlined mechanical keyboard and high-refresh setup',
+        'Dropping into hot zones with squadmates in PUBG Mobile',
+        'Upgrading and speeding through lanes in Highway Racer Pro',
+        'Having fun chatting and playing with friends online',
       ],
     },
   ];
@@ -130,206 +131,141 @@ export const HobbyPage: React.FC = () => {
         <div className="max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-bold border border-amber-200">
             <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-            <span>My Favorite Hobbies</span>
+            <span>My Favorite Hobbies & Sports</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Basketball, Soccer & Video Games
+            Basketball, Soccer, PUBG Mobile & HRP
           </h1>
 
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Outside of academics and web development, staying active and enjoying hobbies keeps my energy high.
-            Basketball and soccer provide physical fitness, discipline, and competitive team spirit, while video games
-            offer a great creative outlet for quick reflexes and strategy with friends.
+            Outside of high school classes and web design, this is how I stay active and have fun: playing basketball and soccer with friends, following Cristiano Ronaldo, and gaming sessions in PUBG Mobile and Highway Racer Pro.
           </p>
 
-          {/* Filter Tabs */}
-          <div className="pt-2 flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 pt-2">
             <button
               onClick={() => setActiveTab('all')}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 activeTab === 'all'
                   ? 'bg-slate-900 text-white shadow-xs'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
+                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
               }`}
             >
-              All 3 Hobbies
+              All Hobbies ({hobbies.length})
             </button>
             <button
               onClick={() => setActiveTab('basketball')}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 activeTab === 'basketball'
-                  ? 'bg-amber-500 text-white shadow-xs'
-                  : 'bg-amber-50 text-amber-800 hover:bg-amber-100 border border-amber-200/60'
+                  ? 'bg-amber-400 text-slate-950 shadow-xs'
+                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
               }`}
             >
-              <Trophy className="w-3.5 h-3.5" />
-              <span>Basketball</span>
+              Basketball
             </button>
             <button
               onClick={() => setActiveTab('soccer')}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 activeTab === 'soccer'
                   ? 'bg-emerald-600 text-white shadow-xs'
-                  : 'bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200/60'
+                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
               }`}
             >
-              <Activity className="w-3.5 h-3.5" />
-              <span>Soccer</span>
+              Soccer & Ronaldo
             </button>
             <button
               onClick={() => setActiveTab('gaming')}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 activeTab === 'gaming'
                   ? 'bg-purple-600 text-white shadow-xs'
-                  : 'bg-purple-50 text-purple-800 hover:bg-purple-100 border border-purple-200/60'
+                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
               }`}
             >
-              <Gamepad2 className="w-3.5 h-3.5" />
-              <span>Video Games</span>
+              PUBG Mobile & HRP
             </button>
           </div>
         </div>
       </div>
 
-      {/* Main Hobbies Cards */}
+      {/* Hobby Cards */}
       <div className="space-y-8">
         {filteredHobbies.map((hobby) => {
-          const IconComp = hobby.icon;
+          const Icon = hobby.icon;
           return (
             <div
               key={hobby.id}
-              className="bg-white rounded-3xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-md transition-all"
+              className="bg-white rounded-3xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col lg:flex-row"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-                {/* Image Section */}
-                <div className="lg:col-span-5 relative min-h-[260px] sm:min-h-[320px] bg-slate-900 overflow-hidden">
-                  <img
-                    src={hobby.image}
-                    alt={hobby.title}
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent lg:hidden" />
-                  <div className="absolute top-4 left-4">
-                    <span
-                      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${hobby.badgeBg} ${hobby.badgeText} shadow-xs`}
-                    >
-                      <IconComp className="w-3.5 h-3.5" />
-                      {hobby.title}
-                    </span>
+              {/* Media Preview */}
+              <div className="lg:w-5/12 relative aspect-16/9 lg:aspect-auto overflow-hidden bg-slate-100">
+                <img
+                  src={hobby.image}
+                  alt={hobby.title}
+                  className="w-full h-full object-cover object-center"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute top-4 left-4">
+                  <span
+                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold shadow-xs ${hobby.badgeBg} ${hobby.badgeText}`}
+                  >
+                    <Icon className="w-3.5 h-3.5" />
+                    {hobby.title}
+                  </span>
+                </div>
+              </div>
+
+              {/* Card Details */}
+              <div className="lg:w-7/12 p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                <div className="space-y-3">
+                  <h2 className="text-2xl font-bold text-slate-900 tracking-tight">
+                    {hobby.title}
+                  </h2>
+                  <div className="text-xs font-medium text-amber-600">
+                    {hobby.subtitle}
                   </div>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    {hobby.description}
+                  </p>
                 </div>
 
-                {/* Content Section */}
-                <div className="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-6">
-                  <div className="space-y-4">
-                    <div>
-                      <h2 className="text-2xl font-bold text-slate-900">{hobby.title}</h2>
-                      <p className="text-xs font-semibold text-slate-400 mt-0.5">
-                        {hobby.subtitle}
-                      </p>
-                    </div>
-
-                    <p className="text-sm text-slate-600 leading-relaxed">
-                      {hobby.description}
-                    </p>
-
-                    {/* Stats Grid */}
-                    <div className="grid grid-cols-3 gap-3 pt-1">
-                      {hobby.stats.map((s, idx) => (
-                        <div
-                          key={idx}
-                          className="p-3 rounded-2xl bg-slate-50 border border-slate-100"
-                        >
-                          <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                            {s.label}
-                          </div>
-                          <div className="text-xs font-bold text-slate-900 mt-1 truncate">
-                            {s.value}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Skills/Tags */}
-                    <div className="space-y-1.5">
-                      <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
-                        Focus Areas & Techniques
+                {/* Quick Stats */}
+                <div className="grid grid-cols-3 gap-2 py-3 border-y border-slate-100 bg-slate-50/50 rounded-xl px-4">
+                  {hobby.stats.map((stat, idx) => (
+                    <div key={idx} className="text-center">
+                      <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">
+                        {stat.label}
                       </div>
-                      <div className="flex flex-wrap gap-1.5">
-                        {hobby.keySkills.map((skill, idx) => (
-                          <span
-                            key={idx}
-                            className="text-xs font-medium text-slate-700 bg-slate-100 px-2.5 py-1 rounded-lg"
-                          >
-                            {skill}
-                          </span>
-                        ))}
+                      <div className="text-xs sm:text-sm font-bold text-slate-900 mt-0.5">
+                        {stat.value}
                       </div>
                     </div>
-                  </div>
+                  ))}
+                </div>
 
-                  {/* Highlights Bullet Box */}
-                  <div className="p-4 rounded-2xl bg-slate-50/80 border border-slate-200/80 space-y-2">
-                    <div className="text-xs font-bold text-slate-900 flex items-center gap-1.5">
-                      <Flame className="w-3.5 h-3.5 text-amber-500" />
-                      <span>Why I Love It</span>
-                    </div>
-                    <p className="text-xs text-slate-600 leading-relaxed italic">
-                      "{hobby.favoriteAspect}"
-                    </p>
+                {/* Favorite Aspect */}
+                <div className="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200/70 text-xs text-slate-700">
+                  <span className="font-bold text-slate-900">Why I Love It: </span>
+                  {hobby.favoriteAspect}
+                </div>
+
+                {/* Highlights */}
+                <div className="space-y-1.5">
+                  <div className="text-[11px] font-bold text-slate-900 uppercase tracking-wider">
+                    Key Highlights
                   </div>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                    {hobby.highlights.map((h, i) => (
+                      <li key={i} className="flex items-center gap-2 text-xs text-slate-600">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0" />
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
           );
         })}
-      </div>
-
-      {/* Balanced Lifestyle Comparison Grid */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xs space-y-6">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-slate-900 text-white flex items-center justify-center">
-            <Zap className="w-5 h-5 text-amber-400" />
-          </div>
-          <div>
-            <h3 className="text-lg font-bold text-slate-900">How These Hobbies Complement My Growth</h3>
-            <p className="text-xs text-slate-500">Connecting physical sports and digital entertainment to daily discipline</p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="p-5 rounded-2xl bg-amber-50/60 border border-amber-200/60 space-y-2">
-            <div className="flex items-center gap-2">
-              <Trophy className="w-4 h-4 text-amber-600" />
-              <h4 className="text-sm font-bold text-amber-950">Basketball: Focus & Hustle</h4>
-            </div>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Teaches relentless effort, hand-eye timing, and mental resilience when bouncing back after missed shots.
-            </p>
-          </div>
-
-          <div className="p-5 rounded-2xl bg-emerald-50/60 border border-emerald-200/60 space-y-2">
-            <div className="flex items-center gap-2">
-              <Activity className="w-4 h-4 text-emerald-600" />
-              <h4 className="text-sm font-bold text-emerald-950">Soccer: Vision & Teamwork</h4>
-            </div>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Builds lasting stamina, trust in teammates, unselfish passing, and situational field awareness.
-            </p>
-          </div>
-
-          <div className="p-5 rounded-2xl bg-purple-50/60 border border-purple-200/60 space-y-2">
-            <div className="flex items-center gap-2">
-              <Gamepad2 className="w-4 h-4 text-purple-600" />
-              <h4 className="text-sm font-bold text-purple-950">Video Games: Strategy & Fun</h4>
-            </div>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Sharpens problem solving under pressure, fast reflexes, tactical planning, and relaxed social time.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );

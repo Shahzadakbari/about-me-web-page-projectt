@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { GoalItem } from '../types';
-import { Compass, GraduationCap, CheckCircle2, Clock, Target, Rocket, Lightbulb, Code2 } from 'lucide-react';
+import { Compass, GraduationCap, CheckCircle2, Clock, Target, Rocket, Lightbulb, Plane, HeartPulse, Sparkles } from 'lucide-react';
 
 export const FuturePage: React.FC = () => {
   const [filter, setFilter] = useState<'All' | 'Academic' | 'Technical' | 'Personal'>('All');
@@ -9,54 +9,54 @@ export const FuturePage: React.FC = () => {
     {
       id: 'g1',
       timeframe: 'Short-Term',
-      category: 'Technical',
-      title: 'Master Frontend & Web Foundations',
-      description: 'Complete high school web development with strong proficiency in HTML5, CSS3, responsive layout design, and JavaScript fundamentals.',
+      category: 'Academic',
+      title: "Achieve Straight A's & B's in Sophomore Year",
+      description: "Excel in sophomore high school coursework, especially in mathematics, science, and web design classes with focused study habits.",
       status: 'In Progress',
       targetYear: '2026 - 2027',
     },
     {
       id: 'g2',
       timeframe: 'Short-Term',
-      category: 'Academic',
-      title: 'Maintain Honors GPA & STEM Coursework',
-      description: 'Excel in advanced mathematics, physics, and computer science courses throughout high school to build a solid engineering foundation.',
+      category: 'Technical',
+      title: 'Master Modern Web Design Foundations',
+      description: 'Build responsive, visually appealing websites using HTML, CSS, JavaScript, and modern design principles.',
       status: 'In Progress',
       targetYear: '2027',
     },
     {
       id: 'g3',
       timeframe: 'Medium-Term',
-      category: 'Technical',
-      title: 'Explore Full-Stack & Python Development',
-      description: 'Expand into backend APIs, database management, and Python scripting for algorithmic problem-solving and automation.',
+      category: 'Academic',
+      title: 'Community College & Medical Pre-requisites',
+      description: 'Enroll in community college post-high school graduation to complete all general education and core science pre-requisite courses.',
       status: 'Planned',
-      targetYear: '2027 - 2028',
+      targetYear: '2028 - 2030',
     },
     {
       id: 'g4',
       timeframe: 'Medium-Term',
-      category: 'Academic',
-      title: 'University Admission in Computer Science',
-      description: 'Apply to top-tier collegiate Computer Science programs focusing on software systems, artificial intelligence, and software engineering.',
-      status: 'Target',
-      targetYear: '2029',
+      category: 'Personal',
+      title: 'Dream Travel: Visit Dubai & Paris',
+      description: 'Embark on world travel adventures to explore the iconic skyline of Dubai and walk through the historic streets and landmarks of Paris.',
+      status: 'Planned',
+      targetYear: '2028 - 2031',
     },
     {
       id: 'g5',
       timeframe: 'Long-Term',
-      category: 'Personal',
-      title: 'Build Open Source & Meaningful Software',
-      description: 'Contribute to collaborative open source repositories and engineer applications that solve real-world problems for communities.',
+      category: 'Academic',
+      title: 'Doctoral Program & Medical Career',
+      description: 'Transition into specialized medical training and earn credentials to practice as a doctor, helping patients and serving the healthcare community.',
       status: 'Target',
-      targetYear: '2030+',
+      targetYear: '2032+',
     },
     {
       id: 'g6',
       timeframe: 'Long-Term',
-      category: 'Technical',
-      title: 'Industry Software Engineering Career',
-      description: 'Lead or work with a dynamic software engineering team creating scalable, resilient web platforms and intelligent tools.',
+      category: 'Personal',
+      title: 'Global Travel & Lifelong Health',
+      description: 'Maintain healthy athletic habits in basketball and soccer while traveling internationally to experience diverse global cultures.',
       status: 'Target',
       targetYear: '2032+',
     },
@@ -69,21 +69,86 @@ export const FuturePage: React.FC = () => {
       {/* Header */}
       <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-xs">
         <div className="max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-200">
-            <Compass className="w-3.5 h-3.5 text-blue-600" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-semibold border border-amber-200">
+            <Compass className="w-3.5 h-3.5 text-amber-600" />
             <span>Future Aspirations</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-900">
-            Future Goals & Aspirations
+            Future Goals, Medical Path & Travel Dreams
           </h1>
 
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            A roadmap of my academic milestones, technical ambitions, and long-term career vision. This page outlines what I am working toward both in the classroom and beyond.
+            My roadmap from high school sophomore year to college, completing medical pre-requisites to become a doctor, and traveling the world to Dubai and Paris.
           </p>
 
-          <div className="p-4 rounded-xl bg-blue-50 border border-blue-200 text-xs text-blue-900">
-            <strong>Placeholder Note:</strong> These goals represent a balanced student computer science roadmap. You can edit or replace any goal, target year, or milestone to match your exact plans!
+          <div className="flex flex-wrap gap-2 pt-1">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-800 text-xs font-medium border border-blue-200">
+              <GraduationCap className="w-3.5 h-3.5 text-blue-600" /> Sophomore: A's & B's
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-medium border border-emerald-200">
+              <HeartPulse className="w-3.5 h-3.5 text-emerald-600" /> Career: Doctor
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 text-purple-800 text-xs font-medium border border-purple-200">
+              <Plane className="w-3.5 h-3.5 text-purple-600" /> Travel: Dubai & Paris
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Travel Highlights Feature Card */}
+      <div className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-xs space-y-6">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center font-bold">
+            <Plane className="w-5 h-5 text-slate-950" />
+          </div>
+          <div>
+            <h2 className="text-xl font-bold text-slate-900">Dream Travel Destinations</h2>
+            <p className="text-xs text-slate-500">Places I look forward to exploring in the future</p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Dubai Card */}
+          <div className="group rounded-2xl overflow-hidden border border-slate-200 hover:border-amber-400 hover:shadow-md transition-all flex flex-col bg-slate-50">
+            <div className="aspect-16/9 w-full overflow-hidden bg-slate-200 relative">
+              <img
+                src="/src/assets/images/dubai_skyline_sunset_1790100477620.jpg"
+                alt="Dubai Skyline & Architecture"
+                className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-300"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-slate-950/80 text-white text-xs font-bold backdrop-blur-xs">
+                Dubai, UAE
+              </div>
+            </div>
+            <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
+              <h3 className="font-bold text-slate-900 text-base">Futuristic Architecture & Modern Wonders</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Dreaming of visiting the Burj Khalifa, the Dubai Marina, desert adventures, and seeing world-class modern architecture in person.
+              </p>
+            </div>
+          </div>
+
+          {/* Paris Card */}
+          <div className="group rounded-2xl overflow-hidden border border-slate-200 hover:border-amber-400 hover:shadow-md transition-all flex flex-col bg-slate-50">
+            <div className="aspect-16/9 w-full overflow-hidden bg-slate-200 relative">
+              <img
+                src="/src/assets/images/paris_eiffel_tower_1790100487684.jpg"
+                alt="Paris & The Eiffel Tower"
+                className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-300"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-slate-950/80 text-white text-xs font-bold backdrop-blur-xs">
+                Paris, France
+              </div>
+            </div>
+            <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
+              <h3 className="font-bold text-slate-900 text-base">The City of Light & Historical Culture</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Visiting the iconic Eiffel Tower, strolling along the Seine River, exploring world-renowned museums, and experiencing Parisian culture.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -96,43 +161,43 @@ export const FuturePage: React.FC = () => {
           </div>
           <div>
             <h2 className="text-xl font-bold text-slate-900">Education & Milestone Roadmap</h2>
-            <p className="text-xs text-slate-500">Chronological stages of my learning journey</p>
+            <p className="text-xs text-slate-500">Chronological stages of my learning and career journey</p>
           </div>
         </div>
 
         <div className="relative border-l-2 border-blue-200 ml-4 pl-6 space-y-8">
           {/* Milestone 1 */}
           <div className="relative group">
-            <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-blue-100" />
+            <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-amber-400 ring-4 ring-amber-100" />
             <div className="space-y-1">
-              <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">Current Stage • 2026</span>
-              <h3 className="text-base font-bold text-slate-900">High School Web Development & CS Foundations</h3>
+              <span className="text-xs font-bold text-amber-600 uppercase tracking-wider">Current Stage • 2026 - 2028</span>
+              <h3 className="text-base font-bold text-slate-900">High School Sophomore & Academic Excellence</h3>
               <p className="text-xs text-slate-600 leading-relaxed max-w-2xl">
-                Mastering HTML, CSS, JavaScript, responsive UI design, version control, and building modern web apps.
+                Striving for top grades (A's and B's), excelling in mathematics and web design, staying physically conditioned in basketball and soccer with friends.
               </p>
             </div>
           </div>
 
           {/* Milestone 2 */}
           <div className="relative group">
-            <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-slate-300 ring-4 ring-slate-100 group-hover:bg-blue-600 transition-colors" />
+            <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-blue-100" />
             <div className="space-y-1">
-              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Target: 2028 - 2029</span>
-              <h3 className="text-base font-bold text-slate-900">High School Capstone & College Preparation</h3>
+              <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">Target: Post-High School • 2028 - 2030</span>
+              <h3 className="text-base font-bold text-slate-900">Community College & Pre-Med Prerequisites</h3>
               <p className="text-xs text-slate-600 leading-relaxed max-w-2xl">
-                Completing advanced coursework, building independent software applications, and preparing college admissions portfolios.
+                Completing foundational requirements and prerequisite courses at community college, preparing for transfer into advanced university medical programs.
               </p>
             </div>
           </div>
 
           {/* Milestone 3 */}
           <div className="relative group">
-            <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-slate-300 ring-4 ring-slate-100 group-hover:bg-blue-600 transition-colors" />
+            <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-emerald-600 ring-4 ring-emerald-100" />
             <div className="space-y-1">
-              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Target: 2029 - 2033</span>
-              <h3 className="text-base font-bold text-slate-900">University Degree in Computer Science / Engineering</h3>
+              <span className="text-xs font-bold text-emerald-600 uppercase tracking-wider">Target: 2030 - 2034+</span>
+              <h3 className="text-base font-bold text-slate-900">University Medical Program & Doctor Career</h3>
               <p className="text-xs text-slate-600 leading-relaxed max-w-2xl">
-                Studying algorithms, data structures, cloud architectures, and pursuing tech internships in industry.
+                Joining medical programs, completing clinical rotations, and earning credentials as a practicing doctor to make a lasting difference in patient care.
               </p>
             </div>
           </div>
@@ -152,9 +217,9 @@ export const FuturePage: React.FC = () => {
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                   filter === cat
-                    ? 'bg-blue-600 text-white shadow-xs'
+                    ? 'bg-slate-900 text-white shadow-xs'
                     : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
                 }`}
               >
@@ -175,7 +240,7 @@ export const FuturePage: React.FC = () => {
             return (
               <div
                 key={g.id}
-                className="bg-white rounded-2xl p-6 border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all flex flex-col justify-between space-y-4"
+                className="bg-white rounded-2xl p-6 border border-slate-200 hover:border-amber-400 hover:shadow-md transition-all flex flex-col justify-between space-y-4"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
@@ -210,29 +275,29 @@ export const FuturePage: React.FC = () => {
         </div>
       </div>
 
-      {/* Skills Matrix */}
+      {/* Core Academic & Personal Pillars */}
       <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 border border-slate-800 space-y-6">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center">
-            <Code2 className="w-5 h-5" />
+          <div className="w-10 h-10 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center font-bold">
+            <Sparkles className="w-5 h-5 text-slate-950" />
           </div>
           <div>
-            <h2 className="text-xl font-bold">Skills I Aim to Master</h2>
-            <p className="text-xs text-slate-400">Technical domains I am actively expanding into</p>
+            <h2 className="text-xl font-bold">Current Focus Areas</h2>
+            <p className="text-xs text-slate-400">Academic & personal growth for sophomore year</p>
           </div>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 pt-2 text-center text-xs">
           {[
-            { skill: 'React & Vite', level: 'Actively Learning' },
-            { skill: 'Tailwind CSS', level: 'Proficient' },
-            { skill: 'TypeScript', level: 'Foundational' },
-            { skill: 'Node & APIs', level: 'Exploring' },
-            { skill: 'Python / AI', level: 'Upcoming' },
+            { skill: 'High School Math', level: 'Targeting A Grades' },
+            { skill: 'Web Design', level: 'HTML, CSS & Projects' },
+            { skill: 'Basketball & Soccer', level: 'Playing with Friends' },
+            { skill: 'College Pre-Reqs', level: 'Community College Path' },
+            { skill: 'Doctor Aspirations', level: 'Long-term Calling' },
           ].map((s, idx) => (
             <div key={idx} className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/80 space-y-1">
               <div className="font-bold text-white text-sm">{s.skill}</div>
-              <div className="text-[10px] text-blue-400 font-medium">{s.level}</div>
+              <div className="text-[10px] text-amber-400 font-medium">{s.level}</div>
             </div>
           ))}
         </div>

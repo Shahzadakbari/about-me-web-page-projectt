@@ -107,31 +107,35 @@ export const HomePage: React.FC<HomePageProps> = ({
 
           {/* Right Text & Newsletter */}
           <div className="md:col-span-7 space-y-5">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-900 text-xs font-bold border border-amber-200">
+              <span>Sophomore Year • Class of 2029</span>
+            </div>
+
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight">
               Hey! I'm Shahzad.
             </h1>
 
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
-              I am a high school student, web developer, and athlete based in California. Passionate about{' '}
-              <button
-                onClick={() => onNavigate('hobby')}
-                className="text-blue-600 font-medium underline hover:text-blue-700 transition-colors"
-              >
-                Computer Science
-              </button>
-              , building interactive applications, and competitive{' '}
-              <button
-                onClick={() => onNavigate('sports')}
-                className="text-blue-600 font-medium underline hover:text-blue-700 transition-colors"
-              >
-                soccer & basketball
-              </button>
-              . Welcome to my personal space where I document my projects, milestones, and{' '}
+              I am a high school <span className="font-semibold text-slate-900">sophomore</span> passionate about{' '}
               <button
                 onClick={() => onNavigate('future')}
                 className="text-blue-600 font-medium underline hover:text-blue-700 transition-colors"
               >
-                future aspirations
+                Web Design
+              </button>{' '}
+              and <span className="font-semibold text-slate-900">Mathematics</span>. Outside class, you can find me playing{' '}
+              <button
+                onClick={() => onNavigate('sports')}
+                className="text-blue-600 font-medium underline hover:text-blue-700 transition-colors"
+              >
+                basketball & soccer
+              </button>{' '}
+              with my friends, dropping in on PUBG Mobile, or exploring future goals toward becoming a{' '}
+              <button
+                onClick={() => onNavigate('future')}
+                className="text-blue-600 font-medium underline hover:text-blue-700 transition-colors"
+              >
+                doctor
               </button>
               .
             </p>
@@ -205,8 +209,8 @@ export const HomePage: React.FC<HomePageProps> = ({
           >
             <div className="aspect-4/3 w-full bg-slate-100 overflow-hidden">
               <img
-                src="/src/assets/images/card_arch_sculpture_1790039748358.jpg"
-                alt="Branding and Web Architecture"
+                src="/src/assets/images/basketball_court_sunset_1790100453864.jpg"
+                alt="Basketball with Friends"
                 className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-300"
                 referrerPolicy="no-referrer"
               />
@@ -214,10 +218,10 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
               <div>
                 <h3 className="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">
-                  Basketball, Soccer & Gaming
+                  Basketball & Pickup Games
                 </h3>
                 <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
-                  Balancing academics and coding with high-energy hobbies: competitive basketball, soccer, and video games.
+                  Hitting the outdoor courts and playing basketball with friends after school.
                 </p>
               </div>
               <div className="text-[11px] text-slate-400 font-medium">
@@ -233,8 +237,8 @@ export const HomePage: React.FC<HomePageProps> = ({
           >
             <div className="aspect-4/3 w-full bg-slate-100 overflow-hidden">
               <img
-                src="/src/assets/images/card_creative_sculpture_1790039760743.jpg"
-                alt="Collaboration in Athletic Discipline"
+                src="/src/assets/images/soccer_ronaldo_celebrate_1790100465423.jpg"
+                alt="Soccer with Friends & Ronaldo"
                 className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-300"
                 referrerPolicy="no-referrer"
               />
@@ -242,10 +246,10 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
               <div>
                 <h3 className="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">
-                  Collaboration in Athletic Discipline
+                  Soccer & Watching Ronaldo
                 </h3>
                 <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
-                  Discussing the importance of high school team conditioning, resilience, and sportsmanship.
+                  Playing weekend soccer with friends and following the legendary Cristiano Ronaldo — the greatest of all time.
                 </p>
               </div>
               <div className="text-[11px] text-slate-400 font-medium">
@@ -261,8 +265,8 @@ export const HomePage: React.FC<HomePageProps> = ({
           >
             <div className="aspect-4/3 w-full bg-slate-100 overflow-hidden">
               <img
-                src="/src/assets/images/card_abstract_geometric_1790039771436.jpg"
-                alt="The Future of Computer Science"
+                src="/src/assets/images/dubai_skyline_sunset_1790100477620.jpg"
+                alt="Dream Destinations: Dubai and Paris"
                 className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-300"
                 referrerPolicy="no-referrer"
               />
@@ -270,10 +274,10 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
               <div>
                 <h3 className="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">
-                  The Future of Computer Science
+                  Future Goals & World Travel
                 </h3>
                 <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
-                  Long-term university milestones, exploring software engineering frameworks, and tech careers.
+                  Working hard in school toward my medical career, and my dream travel destinations: Dubai and Paris!
                 </p>
               </div>
               <div className="text-[11px] text-slate-400 font-medium">
@@ -302,28 +306,28 @@ export const HomePage: React.FC<HomePageProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
           <div className="space-y-2 bg-white p-5 rounded-2xl border border-slate-100 shadow-2xs">
             <div className="font-bold text-slate-900 flex items-center gap-2">
-              <Code2 className="w-4 h-4 text-amber-600" /> Coding & Technology
+              <Code2 className="w-4 h-4 text-amber-600" /> Web Design & Math
             </div>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Actively learning full-stack web development with React, TypeScript, and modern CSS. Enjoys building clean user interfaces and interactive school web applications.
+              Passionate about web design and mathematics. Striving for straight A's and B's this sophomore school year while building real-world web projects.
             </p>
           </div>
 
           <div className="space-y-2 bg-white p-5 rounded-2xl border border-slate-100 shadow-2xs">
             <div className="font-bold text-slate-900 flex items-center gap-2">
-              <Trophy className="w-4 h-4 text-amber-600" /> Athletics & Discipline
+              <Trophy className="w-4 h-4 text-amber-600" /> Playing with Friends
             </div>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Committed high school soccer and basketball athlete. Believes physical training builds mental resilience, tactical awareness, and strong team communication.
+              Love playing basketball and soccer with friends. Big fan of Cristiano Ronaldo, and gaming sessions in PUBG Mobile and Highway Racer Pro (HRP).
             </p>
           </div>
 
           <div className="space-y-2 bg-white p-5 rounded-2xl border border-slate-100 shadow-2xs">
             <div className="font-bold text-slate-900 flex items-center gap-2">
-              <Award className="w-4 h-4 text-amber-600" /> Academic Goals
+              <Award className="w-4 h-4 text-amber-600" /> Path to Becoming a Doctor
             </div>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Targeting admission to a premier university Computer Science or Software Engineering program, continuing to innovate in software and robotics.
+              Planning to attend community college post-high school to complete medical prerequisites, then transfer to university toward becoming a doctor.
             </p>
           </div>
         </div>
