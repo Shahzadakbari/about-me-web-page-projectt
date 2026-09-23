@@ -127,18 +127,18 @@ export const HobbyPage: React.FC = () => {
   return (
     <div className="space-y-10">
       {/* Header Banner */}
-      <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-xs">
+      <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-10 border border-slate-200/80 dark:border-slate-800 shadow-xs transition-colors">
         <div className="max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-bold border border-amber-200">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 text-xs font-bold border border-amber-200 dark:border-amber-800/80">
+            <Sparkles className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
             <span>My Favorite Hobbies & Sports</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Basketball, Soccer, PUBG Mobile & HRP
           </h1>
 
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
             Outside of high school classes and web design, this is how I stay active and have fun: playing basketball and soccer with friends, following Cristiano Ronaldo, and gaming sessions in PUBG Mobile and Highway Racer Pro.
           </p>
 
@@ -147,8 +147,8 @@ export const HobbyPage: React.FC = () => {
               onClick={() => setActiveTab('all')}
               className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 activeTab === 'all'
-                  ? 'bg-slate-900 text-white shadow-xs'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  ? 'bg-slate-900 dark:bg-amber-400 text-white dark:text-slate-950 shadow-xs'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }`}
             >
               All Hobbies ({hobbies.length})
@@ -158,7 +158,7 @@ export const HobbyPage: React.FC = () => {
               className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 activeTab === 'basketball'
                   ? 'bg-amber-400 text-slate-950 shadow-xs'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }`}
             >
               Basketball
@@ -168,7 +168,7 @@ export const HobbyPage: React.FC = () => {
               className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 activeTab === 'soccer'
                   ? 'bg-emerald-600 text-white shadow-xs'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }`}
             >
               Soccer & Ronaldo
@@ -178,7 +178,7 @@ export const HobbyPage: React.FC = () => {
               className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 activeTab === 'gaming'
                   ? 'bg-purple-600 text-white shadow-xs'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }`}
             >
               PUBG Mobile & HRP
@@ -194,10 +194,10 @@ export const HobbyPage: React.FC = () => {
           return (
             <div
               key={hobby.id}
-              className="bg-white rounded-3xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col lg:flex-row"
+              className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/80 dark:border-slate-800 overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col lg:flex-row"
             >
               {/* Media Preview */}
-              <div className="lg:w-5/12 relative aspect-16/9 lg:aspect-auto overflow-hidden bg-slate-100">
+              <div className="lg:w-5/12 relative aspect-16/9 lg:aspect-auto overflow-hidden bg-slate-100 dark:bg-slate-950">
                 <img
                   src={hobby.image}
                   alt={hobby.title}
@@ -217,25 +217,25 @@ export const HobbyPage: React.FC = () => {
               {/* Card Details */}
               <div className="lg:w-7/12 p-6 sm:p-8 flex flex-col justify-between space-y-6">
                 <div className="space-y-3">
-                  <h2 className="text-2xl font-bold text-slate-900 tracking-tight">
+                  <h2 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
                     {hobby.title}
                   </h2>
-                  <div className="text-xs font-medium text-amber-600">
+                  <div className="text-xs font-medium text-amber-600 dark:text-amber-400">
                     {hobby.subtitle}
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                     {hobby.description}
                   </p>
                 </div>
 
                 {/* Quick Stats */}
-                <div className="grid grid-cols-3 gap-2 py-3 border-y border-slate-100 bg-slate-50/50 rounded-xl px-4">
+                <div className="grid grid-cols-3 gap-2 py-3 border-y border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50 rounded-xl px-4">
                   {hobby.stats.map((stat, idx) => (
                     <div key={idx} className="text-center">
-                      <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">
+                      <div className="text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider">
                         {stat.label}
                       </div>
-                      <div className="text-xs sm:text-sm font-bold text-slate-900 mt-0.5">
+                      <div className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mt-0.5">
                         {stat.value}
                       </div>
                     </div>
@@ -243,19 +243,19 @@ export const HobbyPage: React.FC = () => {
                 </div>
 
                 {/* Favorite Aspect */}
-                <div className="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200/70 text-xs text-slate-700">
-                  <span className="font-bold text-slate-900">Why I Love It: </span>
+                <div className="p-3.5 rounded-xl bg-amber-50/70 dark:bg-amber-950/40 border border-amber-200/70 dark:border-amber-800/50 text-xs text-slate-700 dark:text-slate-200">
+                  <span className="font-bold text-slate-900 dark:text-white">Why I Love It: </span>
                   {hobby.favoriteAspect}
                 </div>
 
                 {/* Highlights */}
                 <div className="space-y-1.5">
-                  <div className="text-[11px] font-bold text-slate-900 uppercase tracking-wider">
+                  <div className="text-[11px] font-bold text-slate-900 dark:text-white uppercase tracking-wider">
                     Key Highlights
                   </div>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                     {hobby.highlights.map((h, i) => (
-                      <li key={i} className="flex items-center gap-2 text-xs text-slate-600">
+                      <li key={i} className="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-300">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0" />
                         {h}
                       </li>

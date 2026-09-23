@@ -167,9 +167,9 @@ export default function App() {
   const unreadCount = messages.filter((m) => !m.isRead).length;
 
   return (
-    <div className="min-h-screen bg-sky-100 p-2 sm:p-5 lg:p-8 flex justify-center items-start selection:bg-sky-500 selection:text-white font-sans text-slate-800">
+    <div className="min-h-screen bg-sky-100 dark:bg-slate-950 p-2 sm:p-5 lg:p-8 flex justify-center items-start selection:bg-amber-400 selection:text-slate-950 font-sans text-slate-800 dark:text-slate-100 transition-colors duration-200">
       {/* Sidenote Outer Rounded Container */}
-      <div className="w-full max-w-[1360px] bg-white rounded-3xl shadow-xl overflow-hidden border border-sky-200/80 flex flex-col md:flex-row min-h-[92vh]">
+      <div className="w-full max-w-[1360px] bg-white dark:bg-slate-900 rounded-3xl shadow-xl overflow-hidden border border-sky-200/80 dark:border-slate-800 flex flex-col md:flex-row min-h-[92vh] transition-colors">
         {/* Left Categorized Sidebar */}
         <Sidebar
           currentPage={currentPage}
@@ -178,7 +178,7 @@ export default function App() {
         />
 
         {/* Right Main Content Stage */}
-        <main className="flex-1 p-5 sm:p-8 lg:p-12 overflow-y-auto bg-white min-w-0 flex flex-col justify-between">
+        <main className="flex-1 p-5 sm:p-8 lg:p-12 overflow-y-auto bg-white dark:bg-slate-900 min-w-0 flex flex-col justify-between transition-colors">
           <div className="flex-1">
             {currentPage === 'home' && (
               <HomePage
@@ -204,32 +204,32 @@ export default function App() {
           </div>
 
           {/* Minimalist Sidenote Bottom Signature */}
-          <footer className="mt-16 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3">
+          <footer className="mt-16 pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 dark:text-slate-500 gap-3">
             <div>
               © {new Date().getFullYear()} Ahmad Shahzad Akbari • Personal Portfolio
             </div>
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setCurrentPage('home')}
-                className="hover:text-slate-700 transition-colors cursor-pointer"
+                className="hover:text-slate-700 dark:hover:text-slate-300 transition-colors cursor-pointer"
               >
                 Home
               </button>
               <button
                 onClick={() => setCurrentPage('hobby')}
-                className="hover:text-slate-700 transition-colors cursor-pointer"
+                className="hover:text-slate-700 dark:hover:text-slate-300 transition-colors cursor-pointer"
               >
                 Hobbies
               </button>
               <button
                 onClick={() => setCurrentPage('sports')}
-                className="hover:text-slate-700 transition-colors cursor-pointer"
+                className="hover:text-slate-700 dark:hover:text-slate-300 transition-colors cursor-pointer"
               >
                 Sports
               </button>
               <button
                 onClick={() => setCurrentPage('admin')}
-                className="hover:text-slate-700 transition-colors cursor-pointer"
+                className="hover:text-slate-700 dark:hover:text-slate-300 transition-colors cursor-pointer"
               >
                 Admin
               </button>
