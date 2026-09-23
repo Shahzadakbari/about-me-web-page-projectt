@@ -94,8 +94,8 @@ export const HomePage: React.FC<HomePageProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           
           {/* Portrait Image with Studio Backdrop */}
-          <div className="md:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-[340px] aspect-3/4 rounded-3xl overflow-hidden shadow-lg border border-slate-200/80 bg-slate-900 group">
+          <div className="md:col-span-3 flex justify-center">
+            <div className="relative w-full max-w-[180px] aspect-3/4 rounded-2xl overflow-hidden shadow-sm border border-slate-200/80 bg-slate-900 group">
               <img
                 src="/src/assets/images/user_profile.jpg"
                 alt="Ahmad Shahzad Akbari"
@@ -106,7 +106,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
 
           {/* Right Text & Newsletter */}
-          <div className="md:col-span-7 space-y-5">
+          <div className="md:col-span-9 space-y-5">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-900 text-xs font-bold border border-amber-200">
               <span>Sophomore Year • Class of 2029</span>
             </div>

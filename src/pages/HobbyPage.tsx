@@ -71,7 +71,7 @@ export const HobbyPage: React.FC = () => {
       description:
         'Soccer is another sport I love playing with my friends. We set up matches, pass the ball around, and enjoy every minute on the field. Plus, Cristiano Ronaldo is the undisputed GOAT (Greatest of All Time) — watching his dedication, iconic celebrations, and incredible work ethic inspires me every day.',
       image:
-        '/src/assets/images/soccer_ronaldo_celebrate_1790100465423.jpg',
+        '/src/assets/images/ronaldo_celebration.gif',
       icon: Activity,
       accentColor: 'border-emerald-500/30 text-emerald-600',
       badgeBg: 'bg-emerald-100',
