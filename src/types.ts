@@ -17,6 +17,7 @@ export interface MediaItem {
   category: string;
   type: 'image' | 'video';
   url: string;
+  videoEmbedUrl?: string;
   thumbnailUrl?: string;
   caption: string;
   date: string;

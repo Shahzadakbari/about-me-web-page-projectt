@@ -70,13 +70,14 @@ export const MediaPage: React.FC = () => {
     },
     {
       id: 'm6',
-      title: 'Featured Sports / Gaming Highlight (Video Slot)',
+      title: 'PUBG Mobile Squad Gameplay & Highlights',
       category: 'Videos',
       type: 'video',
-      url: '/src/assets/images/soccer_ronaldo_celebrate_1790100465423.jpg',
-      caption: 'Video showcase placeholder — ready for your YouTube highlight clip whenever you are ready to paste the link!',
-      date: 'Ready for Link',
-      isPlaceholder: true,
+      url: 'https://img.youtube.com/vi/2mfx9hJ0VB4/hqdefault.jpg',
+      videoEmbedUrl: 'https://www.youtube.com/embed/2mfx9hJ0VB4?autoplay=1&rel=0',
+      caption: 'Watch my PUBG Mobile squad gameplay and clutch action! Intense firefights, strategic rotations, and aiming for the chicken dinner.',
+      date: 'Sept 2026',
+      isPlaceholder: false,
     },
   ];
 
@@ -96,16 +97,16 @@ export const MediaPage: React.FC = () => {
             <span>Media Gallery</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
-            Photos, Sports & Travel Dreams
+            Photos, Sports, PUBG & Travel Dreams
           </h1>
           <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
-            A visual showcase of my high school journey, playing basketball and soccer with friends, and my future dream travel destinations in Dubai and Paris.
+            A visual showcase of my high school journey, playing basketball and soccer with friends, my PUBG Mobile gameplay highlights, and future dream travel destinations in Dubai and Paris.
           </p>
 
-          <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-300 flex items-start gap-2.5 mt-4">
-            <AlertCircle className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
+          <div className="p-4 rounded-xl bg-purple-50 dark:bg-purple-950/50 border border-purple-200 dark:border-purple-800/60 text-xs text-purple-900 dark:text-purple-200 flex items-start gap-2.5 mt-4">
+            <Play className="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0 mt-0.5 fill-purple-600 dark:fill-purple-400" />
             <div>
-              <span className="font-bold text-slate-900 dark:text-white">Video Link Ready:</span> Whenever you have your YouTube link ready, just send it over and I will embed it directly into the video player slot!
+              <span className="font-bold text-purple-950 dark:text-white">Featured Video Active:</span> PUBG Mobile squad gameplay is now available to watch! Click the video card below to play the video right in the interactive player modal.
             </div>
           </div>
         </div>
@@ -155,7 +156,7 @@ export const MediaPage: React.FC = () => {
                 {item.type === 'video' ? (
                   <>
                     <Play className="w-3 h-3 text-amber-400 fill-amber-400" />
-                    <span>Video Slot</span>
+                    <span>Watch Video</span>
                   </>
                 ) : (
                   <>
@@ -178,8 +179,12 @@ export const MediaPage: React.FC = () => {
 
               {/* Overlay Hover Effect */}
               <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <div className="w-10 h-10 rounded-full bg-white/95 text-slate-900 flex items-center justify-center shadow-lg">
-                  <Maximize2 className="w-5 h-5" />
+                <div className="w-12 h-12 rounded-full bg-white/95 text-slate-900 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  {item.type === 'video' ? (
+                    <Play className="w-5 h-5 text-amber-600 fill-amber-600 ml-0.5" />
+                  ) : (
+                    <Maximize2 className="w-5 h-5" />
+                  )}
                 </div>
               </div>
             </div>
@@ -207,7 +212,7 @@ export const MediaPage: React.FC = () => {
               </div>
 
               <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-amber-600 dark:text-amber-400">
-                <span>View Full Photo</span>
+                <span>{item.type === 'video' ? 'Play PUBG Video' : 'View Full Photo'}</span>
                 <span>→</span>
               </div>
             </div>
@@ -218,23 +223,34 @@ export const MediaPage: React.FC = () => {
       {/* Lightbox / Modal */}
       {selectedItem && (
         <div 
-          className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={() => setSelectedItem(null)}
         >
           <div 
-            className="bg-white dark:bg-slate-900 rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800"
+            className="bg-white dark:bg-slate-900 rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative aspect-16/10 bg-slate-950">
-              <img
-                src={selectedItem.url}
-                alt={selectedItem.title}
-                className="w-full h-full object-contain"
-                referrerPolicy="no-referrer"
-              />
+            <div className="relative aspect-16/9 bg-slate-950">
+              {selectedItem.type === 'video' && selectedItem.videoEmbedUrl ? (
+                <iframe
+                  src={selectedItem.videoEmbedUrl}
+                  title={selectedItem.title}
+                  className="w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : (
+                <img
+                  src={selectedItem.url}
+                  alt={selectedItem.title}
+                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                />
+              )}
               <button
                 onClick={() => setSelectedItem(null)}
-                className="absolute top-4 right-4 p-2 rounded-full bg-black/60 text-white hover:bg-black/90 transition-colors cursor-pointer"
+                className="absolute top-4 right-4 p-2 rounded-full bg-black/70 hover:bg-black/90 text-white transition-colors cursor-pointer z-10"
+                aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -251,6 +267,21 @@ export const MediaPage: React.FC = () => {
               <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 {selectedItem.caption}
               </p>
+
+              {selectedItem.type === 'video' && (
+                <div className="flex items-center gap-3 pt-2">
+                  <a
+                    href="https://youtu.be/2mfx9hJ0VB4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-red-600 hover:bg-red-500 text-white text-xs font-semibold transition-colors shadow-xs"
+                  >
+                    <Play className="w-3.5 h-3.5 fill-white" />
+                    Open on YouTube
+                  </a>
+                  <span className="text-[11px] text-slate-400">https://youtu.be/2mfx9hJ0VB4</span>
+                </div>
+              )}
 
               <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
                 <span>Date: {selectedItem.date}</span>

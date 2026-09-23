@@ -10,7 +10,8 @@ import {
   Target,
   Zap,
   Play,
-  Heart
+  Heart,
+  X
 } from 'lucide-react';
 
 type HobbyCategory = 'all' | 'basketball' | 'soccer' | 'gaming';
@@ -22,6 +23,8 @@ interface HobbyItem {
   subtitle: string;
   description: string;
   image: string;
+  videoUrl?: string;
+  videoEmbedUrl?: string;
   icon: typeof Trophy;
   accentColor: string;
   badgeBg: string;
@@ -34,6 +37,7 @@ interface HobbyItem {
 
 export const HobbyPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<HobbyCategory>('all');
+  const [activeVideoModal, setActiveVideoModal] = useState<{ title: string; embedUrl: string; youtubeUrl: string } | null>(null);
 
   const hobbies: HobbyItem[] = [
     {
@@ -96,9 +100,11 @@ export const HobbyPage: React.FC = () => {
       title: 'PUBG Mobile & Highway Racer Pro (HRP)',
       subtitle: 'Intense battle royale squads & high-speed highway racing',
       description:
-        'When it comes to video games, my go-to titles are PUBG Mobile and Highway Racer Pro (HRP). In PUBG Mobile, I jump into squad matches, strategize positioning, and fight for the chicken dinner. In Highway Racer Pro, it is all about adrenaline, dodging traffic, and mastering high-speed car controls.',
+        'When it comes to video games, my go-to titles are PUBG Mobile and Highway Racer Pro (HRP). In PUBG Mobile, I jump into squad matches, strategize positioning, and fight for the chicken dinner. In Highway Racer Pro, it is all about adrenaline, dodging traffic, and mastering high-speed car controls. Check out my featured PUBG squad gameplay video below!',
       image:
-        'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1000&auto=format&fit=crop&q=80',
+        'https://img.youtube.com/vi/2mfx9hJ0VB4/hqdefault.jpg',
+      videoUrl: 'https://youtu.be/2mfx9hJ0VB4',
+      videoEmbedUrl: 'https://www.youtube.com/embed/2mfx9hJ0VB4?autoplay=1&rel=0',
       icon: Gamepad2,
       accentColor: 'border-purple-500/30 text-purple-600',
       badgeBg: 'bg-purple-100',
@@ -248,25 +254,98 @@ export const HobbyPage: React.FC = () => {
                   {hobby.favoriteAspect}
                 </div>
 
-                {/* Highlights */}
-                <div className="space-y-1.5">
-                  <div className="text-[11px] font-bold text-slate-900 dark:text-white uppercase tracking-wider">
-                    Key Highlights
+                {/* Video Play Button if available */}
+                {hobby.videoEmbedUrl && (
+                  <div className="pt-1 flex flex-wrap items-center gap-3">
+                    <button
+                      onClick={() =>
+                        setActiveVideoModal({
+                          title: hobby.title,
+                          embedUrl: hobby.videoEmbedUrl!,
+                          youtubeUrl: hobby.videoUrl || 'https://youtu.be/2mfx9hJ0VB4',
+                        })
+                      }
+                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-xs transition-all shadow-xs cursor-pointer group"
+                    >
+                      <Play className="w-4 h-4 fill-white group-hover:scale-110 transition-transform" />
+                      Watch PUBG Gameplay Video
+                    </button>
+                    <a
+                      href={hobby.videoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-purple-600 dark:text-purple-400 hover:underline font-medium"
+                    >
+                      Open YouTube link ↗
+                    </a>
                   </div>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-                    {hobby.highlights.map((h, i) => (
-                      <li key={i} className="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-300">
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0" />
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                )}
               </div>
             </div>
           );
         })}
       </div>
+
+      {/* Video Modal */}
+      {activeVideoModal && (
+        <div
+          className="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setActiveVideoModal(null)}
+        >
+          <div
+            className="bg-white dark:bg-slate-900 rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative aspect-16/9 bg-slate-950">
+              <iframe
+                src={activeVideoModal.embedUrl}
+                title={activeVideoModal.title}
+                className="w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+              <button
+                onClick={() => setActiveVideoModal(null)}
+                className="absolute top-4 right-4 p-2 rounded-full bg-black/70 hover:bg-black/90 text-white transition-colors cursor-pointer z-10"
+                aria-label="Close video modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <div className="p-6 space-y-3">
+              <div className="flex items-center justify-between">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                  {activeVideoModal.title}
+                </h3>
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-purple-100 dark:bg-purple-950/60 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+                  PUBG Mobile
+                </span>
+              </div>
+              <p className="text-xs text-slate-600 dark:text-slate-300">
+                Squad gameplay and clutch moments in PUBG Mobile. Watch right here or open directly on YouTube.
+              </p>
+              <div className="pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 text-xs">
+                <a
+                  href={activeVideoModal.youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-semibold shadow-xs"
+                >
+                  <Play className="w-3.5 h-3.5 fill-white" />
+                  Watch on YouTube
+                </a>
+                <button
+                  onClick={() => setActiveVideoModal(null)}
+                  className="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 cursor-pointer"
+                >
+                  Close Player
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
