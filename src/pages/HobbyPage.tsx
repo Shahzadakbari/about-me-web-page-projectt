@@ -16,6 +16,14 @@ import {
 
 type HobbyCategory = 'all' | 'basketball' | 'soccer' | 'gaming';
 
+interface VideoEntry {
+  title: string;
+  game: string;
+  thumbnail: string;
+  videoUrl: string;
+  videoEmbedUrl: string;
+}
+
 interface HobbyItem {
   id: string;
   category: 'basketball' | 'soccer' | 'gaming';
@@ -25,6 +33,7 @@ interface HobbyItem {
   image: string;
   videoUrl?: string;
   videoEmbedUrl?: string;
+  videos?: VideoEntry[];
   icon: typeof Trophy;
   accentColor: string;
   badgeBg: string;
@@ -100,11 +109,27 @@ export const HobbyPage: React.FC = () => {
       title: 'PUBG Mobile & Highway Racer Pro (HRP)',
       subtitle: 'Intense battle royale squads & high-speed highway racing',
       description:
-        'When it comes to video games, my go-to titles are PUBG Mobile and Highway Racer Pro (HRP). In PUBG Mobile, I jump into squad matches, strategize positioning, and fight for the chicken dinner. In Highway Racer Pro, it is all about adrenaline, dodging traffic, and mastering high-speed car controls. Check out my featured PUBG squad gameplay video below!',
+        'When it comes to video games, my go-to titles are PUBG Mobile and Highway Racer Pro (HRP). In PUBG Mobile, I jump into squad matches, strategize positioning, and fight for the chicken dinner. In Highway Racer Pro, it is all about adrenaline, dodging traffic, and mastering high-speed car controls. Watch my featured gameplay videos below!',
       image:
-        'https://img.youtube.com/vi/2mfx9hJ0VB4/hqdefault.jpg',
-      videoUrl: 'https://youtu.be/2mfx9hJ0VB4',
-      videoEmbedUrl: 'https://www.youtube.com/embed/2mfx9hJ0VB4?autoplay=1&rel=0',
+        'https://img.youtube.com/vi/k3aKITOrBcs/hqdefault.jpg',
+      videoUrl: 'https://youtu.be/k3aKITOrBcs',
+      videoEmbedUrl: 'https://www.youtube.com/embed/k3aKITOrBcs?autoplay=1&rel=0',
+      videos: [
+        {
+          title: 'Highway Racer Pro — High Speed Traffic Run',
+          game: 'Highway Racer Pro (HRP)',
+          thumbnail: 'https://img.youtube.com/vi/k3aKITOrBcs/hqdefault.jpg',
+          videoUrl: 'https://youtu.be/k3aKITOrBcs',
+          videoEmbedUrl: 'https://www.youtube.com/embed/k3aKITOrBcs?autoplay=1&rel=0',
+        },
+        {
+          title: 'PUBG Mobile — Squad Gameplay & Highlights',
+          game: 'PUBG Mobile',
+          thumbnail: 'https://img.youtube.com/vi/2mfx9hJ0VB4/hqdefault.jpg',
+          videoUrl: 'https://youtu.be/2mfx9hJ0VB4',
+          videoEmbedUrl: 'https://www.youtube.com/embed/2mfx9hJ0VB4?autoplay=1&rel=0',
+        },
+      ],
       icon: Gamepad2,
       accentColor: 'border-purple-500/30 text-purple-600',
       badgeBg: 'bg-purple-100',
@@ -254,21 +279,57 @@ export const HobbyPage: React.FC = () => {
                   {hobby.favoriteAspect}
                 </div>
 
-                {/* Video Play Button if available */}
-                {hobby.videoEmbedUrl && (
+                {/* Video Play Buttons for Gaming or single video */}
+                {hobby.videos && hobby.videos.length > 0 ? (
+                  <div className="pt-2 space-y-2">
+                    <div className="text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
+                      Featured Gameplay Videos:
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      {hobby.videos.map((vid, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-800 hover:border-purple-300 dark:hover:border-purple-800 transition-colors"
+                        >
+                          <div className="min-w-0 pr-2">
+                            <div className="text-xs font-bold text-slate-900 dark:text-white truncate">
+                              {vid.game}
+                            </div>
+                            <div className="text-[10px] text-slate-500 dark:text-slate-400 truncate">
+                              {vid.title}
+                            </div>
+                          </div>
+                          <button
+                            onClick={() =>
+                              setActiveVideoModal({
+                                title: vid.title,
+                                embedUrl: vid.videoEmbedUrl,
+                                youtubeUrl: vid.videoUrl,
+                              })
+                            }
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-semibold text-[11px] shrink-0 transition-all cursor-pointer shadow-2xs"
+                          >
+                            <Play className="w-3 h-3 fill-white" />
+                            Watch
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : hobby.videoEmbedUrl ? (
                   <div className="pt-1 flex flex-wrap items-center gap-3">
                     <button
                       onClick={() =>
                         setActiveVideoModal({
                           title: hobby.title,
                           embedUrl: hobby.videoEmbedUrl!,
-                          youtubeUrl: hobby.videoUrl || 'https://youtu.be/2mfx9hJ0VB4',
+                          youtubeUrl: hobby.videoUrl || 'https://youtu.be/k3aKITOrBcs',
                         })
                       }
                       className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-xs transition-all shadow-xs cursor-pointer group"
                     >
                       <Play className="w-4 h-4 fill-white group-hover:scale-110 transition-transform" />
-                      Watch PUBG Gameplay Video
+                      Watch Gameplay Video
                     </button>
                     <a
                       href={hobby.videoUrl}
@@ -279,7 +340,7 @@ export const HobbyPage: React.FC = () => {
                       Open YouTube link ↗
                     </a>
                   </div>
-                )}
+                ) : null}
               </div>
             </div>
           );

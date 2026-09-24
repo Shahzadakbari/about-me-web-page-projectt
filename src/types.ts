@@ -1,23 +1,29 @@
-export type PageId = 'home' | 'media' | 'future' | 'hobby' | 'sports' | 'admin';
+export type PageId = 'home' | 'media' | 'future' | 'hobby' | 'sports' | 'contact' | 'admin';
 
 export interface Message {
   id: string;
-  createdAt: string;
   name: string;
   email: string;
+  reason: string;
   subject: string;
-  category: string;
+  category?: string;
   message: string;
-  isRead: boolean;
+  timestamp: string;
+  createdAt: string;
+  status: 'new' | 'replied';
+  replied: boolean;
+  repliedAt: string | null;
+  isRead?: boolean;
 }
 
 export interface MediaItem {
   id: string;
   title: string;
   category: string;
-  type: 'image' | 'video';
+  type: 'image' | 'video' | 'social';
   url: string;
   videoEmbedUrl?: string;
+  externalUrl?: string;
   thumbnailUrl?: string;
   caption: string;
   date: string;

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "c-101",
+    "name": "Mr. Harrison",
+    "email": "harrison@highschool.edu",
+    "reason": "School / Web Project",
+    "subject": "Web Development Project Milestone 1",
+    "message": "Great progress setting up your project structure, Ahmad! Make sure your navigation links and media placeholders align with the rubric.",
+    "timestamp": "2026-09-18T14:32:00.000Z",
+    "createdAt": "2026-09-18T14:32:00.000Z",
+    "status": "replied",
+    "replied": true,
+    "repliedAt": "2026-09-19T10:15:00.000Z",
+    "isRead": true
+  },
+  {
+    "id": "c-102",
+    "name": "Sarah Jenkins",
+    "email": "sarah.j@example.com",
+    "reason": "Question",
+    "subject": "Question about your PUBG & Highway Racer gaming highlights",
+    "message": "Loved the layout and your plan for the hobby showcase! What video capture settings do you use for your gameplay videos?",
+    "timestamp": "2026-09-20T09:15:00.000Z",
+    "createdAt": "2026-09-20T09:15:00.000Z",
+    "status": "new",
+    "replied": false,
+    "repliedAt": null,
+    "isRead": false
+  },
+  {
+    "id": "c-103",
+    "name": "Coach Ramirez",
+    "email": "coach.ramirez@highschool.edu",
+    "reason": "Sports & Athletics",
+    "subject": "Basketball & Soccer Season Conditioning",
+    "message": "Great seeing your athletic highlights on the portfolio Ahmad! Keep up the good work on the court and with your classes.",
+    "timestamp": "2026-09-21T11:45:00.000Z",
+    "createdAt": "2026-09-21T11:45:00.000Z",
+    "status": "new",
+    "replied": false,
+    "repliedAt": null,
+    "isRead": false
+  }
+]

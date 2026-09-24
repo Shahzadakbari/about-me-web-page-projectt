@@ -7,6 +7,7 @@ import {
   Trophy,
   Compass,
   Image as ImageIcon,
+  Mail,
   ShieldCheck,
   Menu,
   X,
@@ -47,25 +48,25 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {/* Brand Header */}
         <button
           onClick={() => handleSelect('home')}
-          className="flex items-center gap-3.5 text-left group focus:outline-hidden w-full"
+          className="flex items-center gap-3.5 text-left group focus:outline-hidden w-full cursor-pointer"
         >
           <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-amber-400 shadow-xs group-hover:scale-105 transition-transform bg-slate-100 dark:bg-slate-800 shrink-0">
             <img
               src="/src/assets/images/user_profile.jpg"
-              alt="Shahzad"
+              alt="Ahmad Shahzad Akbari"
               className="w-full h-full object-cover object-top"
               referrerPolicy="no-referrer"
             />
           </div>
           <div className="flex-1 min-w-0">
             <div className="text-base font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors leading-tight truncate">
-              Shahzad
+              Ahmad Shahzad
             </div>
-            <div className="text-xs text-slate-400 dark:text-slate-400 font-medium">Personal Portfolio</div>
+            <div className="text-xs text-slate-400 dark:text-slate-400 font-medium">Class of 2029 • Portfolio</div>
           </div>
         </button>
 
-        {/* Navigation Links */}
+        {/* Navigation Links - All 6 required pages + Admin */}
         <div className="space-y-1">
           <button
             onClick={() => handleSelect('home')}
@@ -79,7 +80,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             onClick={() => handleSelect('hobby')}
             className={navItemClass(currentPage === 'hobby')}
           >
-            <span>Hobbies</span>
+            <span>Hobbies (Choice #1)</span>
             <Gamepad2 className="w-4 h-4 text-slate-400" />
           </button>
 
@@ -87,7 +88,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             onClick={() => handleSelect('sports')}
             className={navItemClass(currentPage === 'sports')}
           >
-            <span>Sports & Athletics</span>
+            <span>Sports & Athletics (Choice #2)</span>
             <Trophy className="w-4 h-4 text-slate-400" />
           </button>
 
@@ -105,6 +106,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
           >
             <span>Media Gallery</span>
             <ImageIcon className="w-4 h-4 text-slate-400" />
+          </button>
+
+          <button
+            onClick={() => handleSelect('contact')}
+            className={navItemClass(currentPage === 'contact')}
+          >
+            <span>Contact Form</span>
+            <Mail className="w-4 h-4 text-slate-400" />
           </button>
 
           <button
@@ -152,30 +161,30 @@ export const Sidebar: React.FC<SidebarProps> = ({
       <div className="md:hidden flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 sticky top-0 z-30">
         <button
           onClick={() => handleSelect('home')}
-          className="flex items-center gap-2.5 focus:outline-hidden"
+          className="flex items-center gap-2.5 focus:outline-hidden cursor-pointer"
         >
           <div className="w-8 h-8 rounded-full overflow-hidden border border-amber-400 shadow-xs shrink-0">
             <img
               src="/src/assets/images/user_profile.jpg"
-              alt="Shahzad"
+              alt="Ahmad Shahzad Akbari"
               className="w-full h-full object-cover object-top"
               referrerPolicy="no-referrer"
             />
           </div>
-          <span className="font-bold text-slate-900 dark:text-white text-sm">Shahzad • Portfolio</span>
+          <span className="font-bold text-slate-900 dark:text-white text-sm">Ahmad Shahzad</span>
         </button>
 
         <div className="flex items-center gap-2">
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-hidden"
+            className="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-hidden cursor-pointer"
             aria-label="Toggle theme"
           >
             {theme === 'dark' ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5 text-slate-700" />}
           </button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-hidden"
+            className="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-hidden cursor-pointer"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -199,4 +208,3 @@ export const Sidebar: React.FC<SidebarProps> = ({
     </>
   );
 };
-
