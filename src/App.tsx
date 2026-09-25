@@ -241,9 +241,20 @@ export default function App() {
   const unrepliedCount = messages.filter((m) => !m.replied || m.status === 'new').length;
 
   return (
-    <div className="min-h-screen bg-sky-100 dark:bg-slate-950 p-2 sm:p-5 lg:p-8 flex justify-center items-start selection:bg-amber-400 selection:text-slate-950 font-sans text-slate-800 dark:text-slate-100 transition-colors duration-200">
+    <div className="min-h-screen relative overflow-x-hidden p-2 sm:p-5 lg:p-8 flex justify-center items-start selection:bg-amber-400 selection:text-slate-950 font-sans text-slate-800 dark:text-slate-100 transition-colors duration-200">
+      {/* Animated Luffy GIF Fullscreen Background */}
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <img
+          src="https://media.tenor.com/6ZhzHHYyNxoAAAAM/luffy.gif"
+          alt="Luffy Background"
+          className="w-full h-full object-cover object-center scale-105"
+        />
+        {/* Ambient Dark/Light Overlay for Contrast and Readability */}
+        <div className="absolute inset-0 bg-slate-950/50 dark:bg-slate-950/75 backdrop-blur-[1px]" />
+      </div>
+
       {/* Sidenote Outer Rounded Container */}
-      <div className="w-full max-w-[1360px] bg-white dark:bg-slate-900 rounded-3xl shadow-xl overflow-hidden border border-sky-200/80 dark:border-slate-800 flex flex-col md:flex-row min-h-[92vh] transition-colors">
+      <div className="w-full max-w-[1360px] bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden border border-white/40 dark:border-slate-800/80 flex flex-col md:flex-row min-h-[92vh] transition-colors relative z-10">
         {/* Left Categorized Sidebar */}
         <Sidebar
           currentPage={currentPage}
